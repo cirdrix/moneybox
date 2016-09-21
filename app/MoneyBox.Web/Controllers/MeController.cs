@@ -23,10 +23,10 @@ namespace MoneyBox.Web.Controllers
         {
         }
 
-        public MeController(ApplicationUserManager userManager)
-        {
-            UserManager = userManager;
-        }
+        //public MeController(ApplicationUserManager userManager)
+        //{
+        //    UserManager = userManager;
+        //}
 
         public ApplicationUserManager UserManager
         {

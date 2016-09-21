@@ -10,6 +10,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using MoneyBox.DataAccess;
+using MoneyBox.Domain;
 using MoneyBox.Web.Models;
 
 namespace MoneyBox.Web

@@ -7,6 +7,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
+using MoneyBox.DataAccess;
+using MoneyBox.Domain;
 using Owin;
 using MoneyBox.Web.Models;
 using MoneyBox.Web.Providers;

@@ -1,0 +1,14 @@
+﻿@model System.Collections.Generic.IEnumerable<MoneyBox.Domain.Box>
+
+@{
+    ViewBag.Title = "title";
+   
+}
+
+<h2>title</h2>
+<ul>
+    @foreach (var box in Model)
+    {
+        <li>@box.Id</li>
+    }
+</ul>

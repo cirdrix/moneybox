@@ -7,9 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyBox.Web.Tests", "app\M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyBox.Domain", "app\MoneyBox.Domain\MoneyBox.Domain.csproj", "{29CB7917-AE51-408C-97D2-FAD5F556D575}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyBox.Data", "app\MoneyBox.Data\MoneyBox.Data.csproj", "{DD35C6FC-8201-47B5-9E92-B762C1A20776}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyBox.Web", "app\MoneyBox.Web\MoneyBox.Web.csproj", "{61DBDE98-001D-46AD-93F2-26FAF73552AD}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MoneyBox.Database", "app\MoneyBox.Database\MoneyBox.Database.sqlproj", "{353B67CF-D429-48C0-9774-6D2253C646E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyBox.DataAccess", "app\MoneyBox.DataAccess\MoneyBox.DataAccess.csproj", "{862AE7FD-4CEB-4E65-B36C-239414C7D5EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyBox.Services", "app\MoneyBox.Services\MoneyBox.Services.csproj", "{5479F2C8-EEF0-4736-B4B6-16363EF60C1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +29,24 @@ Global
 		{29CB7917-AE51-408C-97D2-FAD5F556D575}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29CB7917-AE51-408C-97D2-FAD5F556D575}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29CB7917-AE51-408C-97D2-FAD5F556D575}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD35C6FC-8201-47B5-9E92-B762C1A20776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD35C6FC-8201-47B5-9E92-B762C1A20776}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD35C6FC-8201-47B5-9E92-B762C1A20776}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD35C6FC-8201-47B5-9E92-B762C1A20776}.Release|Any CPU.Build.0 = Release|Any CPU
 		{61DBDE98-001D-46AD-93F2-26FAF73552AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{61DBDE98-001D-46AD-93F2-26FAF73552AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61DBDE98-001D-46AD-93F2-26FAF73552AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61DBDE98-001D-46AD-93F2-26FAF73552AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{353B67CF-D429-48C0-9774-6D2253C646E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{353B67CF-D429-48C0-9774-6D2253C646E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{353B67CF-D429-48C0-9774-6D2253C646E5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{353B67CF-D429-48C0-9774-6D2253C646E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{353B67CF-D429-48C0-9774-6D2253C646E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{353B67CF-D429-48C0-9774-6D2253C646E5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{862AE7FD-4CEB-4E65-B36C-239414C7D5EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862AE7FD-4CEB-4E65-B36C-239414C7D5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{862AE7FD-4CEB-4E65-B36C-239414C7D5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{862AE7FD-4CEB-4E65-B36C-239414C7D5EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5479F2C8-EEF0-4736-B4B6-16363EF60C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5479F2C8-EEF0-4736-B4B6-16363EF60C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5479F2C8-EEF0-4736-B4B6-16363EF60C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5479F2C8-EEF0-4736-B4B6-16363EF60C1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
