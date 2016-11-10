@@ -231,6 +231,46 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.bootstrap.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.bootstrap.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.bootstrap4.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.foundation.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.foundation.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.jqueryui.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.jqueryui.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.material.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.material.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.semanticui.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.semanticui.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.uikit.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.uikit.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\jquery.dataTables.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\jquery.dataTables.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\favicon.ico" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_asc.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_both.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_desc.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.bootstrap.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.foundation.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.foundation.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.jqueryui.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.material.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.material.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.semanticui.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.uikit.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.uikit.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\jquery.js" />
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\knockout.validation.debug.js" />
@@ -283,6 +323,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\Sorting icons.psd" />
     <None Include="Views\Box\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

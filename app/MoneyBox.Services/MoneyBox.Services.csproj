@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRegistrationService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="IBoxService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,7 +1,66 @@
 ﻿@model dynamic
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Registrations";
 }
+@section Head
+{
+    <link href="~/Scripts/jquery-datatables-1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/jquery-datatables-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+<h2>Registration Lists</h2>
+<div class="row">
+    <div class="col-md-12">
+        <table id="theTable" class="dataTable table table-striped table-bordered table-hover"></table>
+    </div>
+</div>
+@section Scripts
+{
+    <script src="~/Scripts/jquery-datatables-1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery-datatables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        var urlLoadTable = '@Url.Action("LoadTable")';
+        var urlEditRow = '';
+        $(function () {
+            var dtable = $('#theTable').dataTable({
+                "bStateSave": true,
+                "bServerSide": true,
+                "bProcessing": true,
+                "sAjaxSource": urlLoadTable,
+                "order": [[1, "desc"]],
+                "fnDrawCallback": function (oSettings) {
+                },
+                "bAutoWidth": false,
+                "iDisplayLength": 100,
+                "aoColumns": [
+                    { "sName": "Id", "bVisible": false },
+                    {
+                        "sName": "Description",
+                        sTitle: 'Description',
+                        "createdCell": function (td, cellData, rowData, row, col) {
+                            $(td).html('<a style="display:inline-block;white-space:nowrap;" href=\"' + urlEditRow + '/' +
+                                rowData[0] + '\" title="v_admin_product_edit_pagetitle"" class="my-tooltip-link"><i class="ace-icon glyphicon glyphicon-user"></i>&nbsp;' + rowData[1] + '</a>');
+                        }
+                    },
+                {
+                    "sName": "Box",
+                    sTitle: 'Box'
+                },
+                {
+                    "sName": "Amount",
+                    sTitle: 'Amount'
+                }
+                ]
+            }).api();
 
-<h2>title</h2>
+            $(".dataTables_filter input")
+                .unbind()
+                .bind("keyup", function (e) {
+                    if (e.keyCode === 13) {
+                        dtable.search(this.value).draw();
+                    }
+                    return;
+                });
+        });
+    </script>
+}
