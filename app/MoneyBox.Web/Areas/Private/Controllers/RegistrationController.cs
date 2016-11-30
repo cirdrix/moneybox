@@ -3,18 +3,24 @@
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Data;
     using System.Linq;
+    using System.Web;
     using System.Web.Mvc;
 
     using MoneyBox.Domain;
+    using MoneyBox.Utils;
     using MoneyBox.Web.Areas.Private.Models;
+
+    using OfficeOpenXml;
 
     using Services;
 
     [Authorize]
     public class RegistrationController : Controller
     {
-        private IRegistrationService registrationService;
+        private readonly IRegistrationService registrationService;
 
         public RegistrationController(IRegistrationService registrationService)
         {
@@ -65,6 +71,58 @@
 
         public ActionResult Import()
         {
+            return this.View();
+        }
+
+        [HttpPost]
+        public ActionResult Import(HttpPostedFileBase uploadFile)
+        {
+            DataTable dt = new DataTable();
+
+            if (uploadFile != null && uploadFile.ContentLength > 0)
+            {
+                if (uploadFile.FileName.EndsWith(".xls") || uploadFile.FileName.EndsWith(".xlsx"))
+                {
+                    try
+                    {
+                        using (var fileExcel = new ExcelPackage())
+                        {
+                            fileExcel.Load(uploadFile.InputStream);
+                            dt = ExcelUtils.GetDataTableFromExcel(fileExcel, true);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        this.ModelState.AddModelError(string.Empty, "Error during upload file");
+                        return View();
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("File", "Only excel files are importable");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("File", "You have to select and excel file");
+            }
+
+            try
+            {
+                registrationService.Import(dt);
+            }
+            catch (Utils.ValidationException valRx)
+            {
+                foreach (var error in valRx.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "Error during importing file");
+            }
+
             return this.View();
         }
     }

@@ -1,12 +1,15 @@
 ﻿namespace MoneyBox.Services
 {
     using System.Collections.Generic;
+    using System.Data;
 
     using MoneyBox.Domain;
 
     public interface IRegistrationService
     {
         IEnumerable<BoxRegistration> GetRegistrationsPaged(string identityName, string searchTerm, Box seatchBox, int pageNumber, int pageRows, string sortorder, string sortname, out int tableRows);
+
+        void Import(DataTable dt);
     }
 
     public class RegistrationService : IRegistrationService
@@ -36,6 +39,11 @@
 
             tableRows = rows.Count;
             return rows;
+        }
+
+        public void Import(DataTable dt)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

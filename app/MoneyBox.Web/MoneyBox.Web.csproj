@@ -345,6 +345,10 @@
       <Project>{5479F2C8-EEF0-4736-B4B6-16363EF60C1A}</Project>
       <Name>MoneyBox.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MoneyBox.Utils\MoneyBox.Utils.csproj">
+      <Project>{4678AF28-83CF-45F8-BB88-C75794C2C224}</Project>
+      <Name>MoneyBox.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
