@@ -1,7 +1,9 @@
 ﻿namespace MoneyBox.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.Data;
+    using System.Globalization;
 
     using MoneyBox.Domain;
 
@@ -9,7 +11,7 @@
     {
         IEnumerable<BoxRegistration> GetRegistrationsPaged(string identityName, string searchTerm, Box seatchBox, int pageNumber, int pageRows, string sortorder, string sortname, out int tableRows);
 
-        void Import(DataTable dt);
+        void Import(DataTable dt, int idBox);
     }
 
     public class RegistrationService : IRegistrationService
@@ -41,9 +43,25 @@
             return rows;
         }
 
-        public void Import(DataTable dt)
+        public void Import(DataTable dt, int idBox)
         {
-            throw new System.NotImplementedException();
+            foreach (DataRow row in dt.Rows)
+            {
+                BoxRegistration registration = new BoxRegistration();
+                registration.Box = new Box { Id = idBox};
+                DateTime createdAt = DateTime.MinValue;
+                if (DateTime.TryParseExact(row[0].ToString(), "s", CultureInfo.InvariantCulture, DateTimeStyles.None, out createdAt))
+                {
+                    registration.CreatedAt = createdAt;
+                }
+
+                registration.Description = row[1].ToString();
+                decimal amount = 0;
+                if (decimal.TryParse(row[2].ToString(), out amount))
+                {
+                    registration.Amount = amount;
+                }
+            }
         }
     }
 }

@@ -109,7 +109,7 @@
 
             try
             {
-                registrationService.Import(dt);
+                registrationService.Import(dt, 1);
             }
             catch (Utils.ValidationException valRx)
             {
