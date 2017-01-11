@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using MoneyBox.DataAccess;
-using MoneyBox.Domain;
-
-namespace MoneyBox.Services
+﻿namespace MoneyBox.Services
 {
+    using System;
+    using System.Collections.Generic;
+
+    using MoneyBox.DataAccess;
+    using MoneyBox.Domain;
+
     public interface IBoxService
     {
         IEnumerable<Box> LoadAllBoxes();

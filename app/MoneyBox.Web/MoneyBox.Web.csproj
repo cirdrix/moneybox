@@ -56,6 +56,10 @@
       <Private>True</Private>
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -197,6 +201,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Private\Models\JQueryDataTableParamModel.cs" />
+    <Compile Include="Areas\Private\Controllers\RegistrationController.cs" />
+    <Compile Include="Areas\Private\PrivateAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BoxController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -223,9 +230,53 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Private\Views\web.config" />
+    <Content Include="Areas\Private\Views\Registration\Index.cshtml" />
+    <Content Include="Areas\Private\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Private\Views\Registration\Import.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.bootstrap.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.bootstrap.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.bootstrap4.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.foundation.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.foundation.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.jqueryui.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.jqueryui.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.material.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.material.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.semanticui.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.semanticui.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.uikit.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\dataTables.uikit.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\jquery.dataTables.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\jquery.dataTables.min.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\favicon.ico" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_asc.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_both.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_desc.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.bootstrap.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.foundation.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.foundation.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.jqueryui.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.material.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.material.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.semanticui.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.uikit.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\dataTables.uikit.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery-datatables-1.10.12\js\jquery.js" />
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\knockout.validation.debug.js" />
@@ -278,6 +329,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Scripts\jquery-datatables-1.10.12\images\Sorting icons.psd" />
     <None Include="Views\Box\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -289,9 +341,17 @@
       <Project>{29CB7917-AE51-408C-97D2-FAD5F556D575}</Project>
       <Name>MoneyBox.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MoneyBox.Localization\MoneyBox.Localization.csproj">
+      <Project>{58498389-001a-426c-a93f-b1a52fb596b8}</Project>
+      <Name>MoneyBox.Localization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MoneyBox.Services\MoneyBox.Services.csproj">
       <Project>{5479F2C8-EEF0-4736-B4B6-16363EF60C1A}</Project>
       <Name>MoneyBox.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoneyBox.Utils\MoneyBox.Utils.csproj">
+      <Project>{4678AF28-83CF-45F8-BB88-C75794C2C224}</Project>
+      <Name>MoneyBox.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -304,7 +364,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\" />
+    <Folder Include="Areas\Private\Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

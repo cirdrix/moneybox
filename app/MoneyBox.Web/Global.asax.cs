@@ -20,6 +20,8 @@ using SimpleInjector.Integration.Web.Mvc;
 
 namespace MoneyBox.Web
 {
+    using MoneyBox.Web.Areas.Private.Controllers;
+
     public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
@@ -44,6 +46,7 @@ namespace MoneyBox.Web
             container.Register(typeof(IRepository<>), typeof(Repository<>), Lifestyle.Scoped);
             container.Register<IBoxService, BoxService>(Lifestyle.Scoped);
             container.Register<IUserService, UserService>(Lifestyle.Scoped);
+            container.Register<IRegistrationService, RegistrationService>(Lifestyle.Scoped);
 
             // UserStore<TUser> is defined in Microsoft.AspNet.Identity.EntityFramework.
             // Do note that UserStore<TUser> implements IUserStore<TUser, string>, so
@@ -60,7 +63,7 @@ namespace MoneyBox.Web
             container.Options.AllowOverridingRegistrations = true;
 
             container.Register<AccountController>(() => new AccountController(), Lifestyle.Scoped);
-
+          
             container.Options.AllowOverridingRegistrations = false;
 
             // Manually controller registration
