@@ -341,6 +341,10 @@
       <Project>{29CB7917-AE51-408C-97D2-FAD5F556D575}</Project>
       <Name>MoneyBox.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MoneyBox.Localization\MoneyBox.Localization.csproj">
+      <Project>{58498389-001a-426c-a93f-b1a52fb596b8}</Project>
+      <Name>MoneyBox.Localization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MoneyBox.Services\MoneyBox.Services.csproj">
       <Project>{5479F2C8-EEF0-4736-B4B6-16363EF60C1A}</Project>
       <Name>MoneyBox.Services</Name>
