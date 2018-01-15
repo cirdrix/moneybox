@@ -204,6 +204,8 @@
     <Compile Include="Areas\Private\Models\JQueryDataTableParamModel.cs" />
     <Compile Include="Areas\Private\Controllers\RegistrationController.cs" />
     <Compile Include="Areas\Private\PrivateAreaRegistration.cs" />
+    <Compile Include="Areas\Public\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BoxController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -234,6 +236,8 @@
     <Content Include="Areas\Private\Views\Registration\Index.cshtml" />
     <Content Include="Areas\Private\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Private\Views\Registration\Import.cshtml" />
+    <Content Include="Areas\Public\Views\web.config" />
+    <Content Include="Areas\Public\Views\Home\Import.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -365,6 +369,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Private\Views\Shared\" />
+    <Folder Include="Areas\Public\Models\" />
+    <Folder Include="Areas\Public\Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
